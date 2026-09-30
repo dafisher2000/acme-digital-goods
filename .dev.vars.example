@@ -1,0 +1,2 @@
+SELLER_CREDENTIAL=paste-the-seller-credential-here # required
+RPC_URL=https://sepolia.base.org # the public endpoint, unless you have a node

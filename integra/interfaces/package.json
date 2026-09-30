@@ -1,0 +1,16 @@
+{
+  "name": "@demo-factory/interfaces",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "demo-factory v4's interfaces: one source of truth (Zod 4) for the TypeScript types, the runtime validator and the JSON Schema files.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./integra-business": {
+      "types": "./src/integra-business.d.ts"
+    }
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  }
+}

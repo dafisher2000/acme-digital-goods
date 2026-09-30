@@ -1,0 +1,51 @@
+// The app: one Worker (worker.ts, which hands every request to the kit) and its page, built by Vite with Cloudflare's
+// plug-in, which sets the assets' directory to the page's build. Deployed on its own with `pnpm deploy`.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "acme-digital-goods",
+  "main": "worker.ts",
+  "compatibility_date": "2026-09-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    // Every path the server answers (design §2.4; RUN_WORKER_FIRST in @demo-factory/interfaces). Without it, a person
+    // who opens /terms.md is served index.html (R6 B1).
+    "run_worker_first": [
+      "/buy/*",
+      "/test/*",
+      "/negotiate/*",
+      "/mcp",
+      "/.well-known/*",
+      "/terms.md",
+      "/llms.txt",
+      "/robots.txt",
+      "/orders/*",
+      "/bookings/*",
+      "/members/*",
+      "/proof/*",
+      "/api/*"
+    ]
+  },
+  // The store: one Durable Object with SQLite, which holds everything the app remembers (design §8.1).
+  "durable_objects": {
+    "bindings": [{ "name": "STORE", "class_name": "IntegraStore" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["IntegraStore"] }],
+  // Workers AI: the seller's agent (design §7.2) and the work an `answer` offer delivers (§5).
+  "ai": { "binding": "AI" },
+  // The models, as Fisher ruled call 9 after the bake-off (design §14): the seller's agent is Llama 4 Scout, and the
+  // work an `answer` offer delivers is Llama 3.3 70B. Each is one setting, and each a model the Free plan serves.
+  // Two secrets, never in a file of the app: SELLER_CREDENTIAL, the shared tenant's (design §12, step 4); and RPC_URL,
+  // the Base Sepolia node the server reads the chain through, whose URL carries a provider's key (the public endpoint,
+  // https://sepolia.base.org, serves when there is no other). Listed here, they are read from the process's
+  // environment when there is no .dev.vars: that is how the Studio's preview gets them. A local run may read them from
+  // .dev.vars, which no zip, save or snapshot carries. A deploy is refused until both are set on the Worker.
+  "secrets": { "required": ["SELLER_CREDENTIAL", "RPC_URL"] },
+  "vars": {
+    "SELLER_MODEL": "@cf/meta/llama-4-scout-17b-16e-instruct",
+    "ANSWER_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+  },
+  "observability": { "enabled": true }
+}

@@ -1,0 +1,39 @@
+/* ACME Digital Goods: the look. Ten properties in the first :root block; the rest is the storefront's own
+   ad-prefixed classes, which use the properties and no literal colour, font or radius. */
+:root {
+  --bg: #f4f1ea;
+  --surface: #fffefb;
+  --text: #26292c;
+  --muted: #5c636a;
+  --accent: #b8402e;
+  --accent-text: #ffffff;
+  --border: #ddd8cc;
+  --font-display: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-body: system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --radius: 6px;
+  --ad-measure: 62rem;
+}
+.ad { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; min-height: 60vh; }
+.ad h1, .ad h2, .ad h3, .ad nav { font-family: var(--font-display); }
+.ad a { color: var(--accent); }
+.ad-wrap { max-width: var(--ad-measure); margin: 0 auto; padding: 0 16px 48px; }
+.ad-head { border-bottom: 1px solid var(--border); }
+.ad-head .ad-wrap { padding-bottom: 12px; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; }
+.ad-brand { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.02em; font-size: 1.25rem; color: var(--accent); text-decoration: none; }
+.ad nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.ad nav a { text-decoration: none; padding: 2px 0; border-bottom: 2px solid transparent; }
+.ad nav a[aria-current="page"] { border-bottom-color: var(--accent); }
+.ad h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 1.5rem 0 0.5rem; }
+.ad .ad-lede { color: var(--muted); font-size: 1.15rem; max-width: 40rem; }
+.ad-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); margin: 1.5rem 0; }
+.ad-card, .ad-offer { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; }
+.ad-offer { margin: 1.5rem 0; }
+.ad-offer h2, .ad-card h3 { margin: 0 0 4px; }
+.ad-price { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 1.3rem; }
+.ad-kicker { font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.ad dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 16px; margin: 12px 0; }
+.ad dt { font-weight: 700; text-transform: capitalize; }
+.ad dd { margin: 0; }
+.ad-foot { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+.ad-foot .ad-wrap { padding-top: 16px; }
+@media (max-width: 480px) { .ad dl { grid-template-columns: 1fr; } .ad dt { margin-top: 6px; } }

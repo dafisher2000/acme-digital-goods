@@ -1,0 +1,77 @@
+/* The kit's pages and controls take the app's look: the ten custom properties of src/theme.css (--bg, --surface, --text,
+   --muted, --accent, --accent-text, --border, --font-display, --font-body, --radius). Each falls back to a neutral value,
+   so an app that sets none still draws. The band is the kit's own and keeps its fixed colours: the app never restyles it. */
+:root {
+  --ik-ink: var(--text, #17202a);
+  --ik-paper: var(--surface, #ffffff);
+  --ik-line: var(--border, #cfd6dd);
+  --ik-accent: var(--accent, #1d4ed8);
+  --ik-accent-ink: var(--accent-text, #ffffff);
+  --ik-radius: var(--radius, 6px);
+  --ik-body: var(--font-body, system-ui, sans-serif);
+  --ik-display: var(--font-display, system-ui, sans-serif);
+  --ik-band: #17202a;
+  --ik-band-ink: #ffffff;
+  --ik-good: #166534;
+  --ik-bad: #b91c1c;
+  --ik-wait: var(--muted, #6b7280);
+}
+body { background: var(--bg, #ffffff); color: var(--text, #17202a); }
+.ik-band {
+  position: sticky; top: 0; z-index: 50; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; align-items: baseline;
+  padding: 0.5rem 1rem; background: var(--ik-band); color: var(--ik-band-ink); font: 0.875rem/1.35 system-ui, sans-serif;
+}
+.ik-band a { color: inherit; margin-left: auto; }
+.ik-buy { margin: 0.75rem 0; font: 0.95rem/1.4 var(--ik-body); }
+.ik-price { margin: 0.25rem 0; }
+.ik-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.ik-button {
+  display: inline-block; padding: 0.45rem 0.9rem; border: 1px solid var(--ik-accent); border-radius: var(--ik-radius); background: var(--ik-accent);
+  color: var(--ik-accent-ink); font: inherit; text-decoration: none; cursor: pointer;
+}
+.ik-button.ik-quiet { background: transparent; color: var(--ik-accent); }
+.ik-dialog { width: min(52rem, 94vw); max-height: 90vh; padding: 1rem; border: 1px solid var(--ik-line); border-radius: var(--ik-radius); color: var(--ik-ink); background: var(--ik-paper); }
+.ik-dialog::backdrop { background: rgb(0 0 0 / 0.45); }
+.ik-dialog-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.ik-live, .ik-page { font: 0.95rem/1.5 var(--ik-body); color: var(--ik-ink); }
+.ik-page { max-width: 68rem; margin: 0 auto; padding: 1rem; background: var(--ik-paper); }
+.ik-page h1, .ik-page h2, .ik-page h3 { font-family: var(--ik-display); }
+.ik-page h1 { margin: 0.5rem 0; }
+.ik-lede, .ik-demo { margin: 0.25rem 0 0.75rem; }
+.ik-demo { padding: 0.5rem 0.75rem; border-left: 4px solid var(--ik-accent); background: color-mix(in srgb, var(--ik-accent) 10%, var(--ik-paper)); }
+.ik-error { color: var(--ik-bad); }
+.ik-failed { padding-top: 2rem; padding-bottom: 2rem; }
+.ik-failed h1 { font-size: 1.4rem; }
+.ik-wait, .ik-small { color: var(--ik-wait); font-size: 0.85rem; }
+.ik-timeline { list-style: none; margin: 0.5rem 0; padding: 0; }
+.ik-event { display: grid; gap: 0.1rem 0.5rem; grid-template-columns: 5.5rem 1fr; padding: 0.35rem 0; border-top: 1px solid var(--ik-line); }
+.ik-event .ik-meta, .ik-event .ik-reason { grid-column: 2; color: var(--ik-wait); font-size: 0.8rem; }
+.ik-chip { align-self: start; padding: 0 0.4rem; border-radius: 999px; font-size: 0.75rem; text-align: center; color: #fff; }
+.ik-side-buyer { background: #7c3aed; } .ik-side-seller { background: #0f766e; } .ik-side-appliance { background: #b45309; } .ik-side-chain { background: #475569; }
+.ik-outcome { margin: 0.75rem 0; padding: 0.5rem 0.75rem; border: 1px solid var(--ik-line); border-radius: var(--ik-radius); }
+.ik-purchases { list-style: none; margin: 0; padding: 0; font: 0.9rem/1.4 var(--ik-body); }
+.ik-purchases li { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 0.4rem 0; border-top: 1px solid var(--ik-line); }
+.ik-purchase-name { font-weight: 600; }
+.ik-table { border-collapse: collapse; width: 100%; }
+.ik-table th, .ik-table td { text-align: left; vertical-align: top; padding: 0.4rem 0.6rem; border-top: 1px solid var(--ik-line); }
+.ik-table th { width: 30%; font-weight: 600; }
+.ik-command { display: flex; gap: 0.5rem; align-items: flex-start; margin: 0.35rem 0; }
+.ik-command pre, .ik-code, .ik-record pre { margin: 0; padding: 0.5rem; overflow-x: auto; background: color-mix(in srgb, var(--ik-ink) 6%, var(--ik-paper)); border-radius: var(--ik-radius); font-size: 0.8rem; flex: 1; }
+.ik-code { white-space: pre-wrap; word-break: break-all; }
+.ik-offers, .ik-hosts { padding-left: 1.1rem; }
+.ik-offers li, .ik-hosts li { margin: 0.6rem 0; }
+.ik-chosen { outline: 2px solid var(--ik-accent); outline-offset: 4px; }
+.ik-three { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.ik-record { min-width: 0; padding: 0.5rem 0.75rem; border: 1px solid var(--ik-line); border-radius: var(--ik-radius); }
+.ik-record h3 { margin: 0.25rem 0; }
+.ik-section { margin: 1.5rem 0; }
+.ik-agreement { padding: 0.5rem 1rem; border: 1px solid var(--ik-line); border-radius: var(--ik-radius); }
+.ik-agreement h3 { margin: 0.9rem 0 0.2rem; font-size: 1rem; }
+.ik-agreement dt { font-weight: 600; text-transform: capitalize; }
+.ik-agreement dd { margin: 0 0 0.4rem 1rem; }
+.ik-checks { list-style: none; padding: 0; }
+.ik-checks li { padding: 0.3rem 0; border-top: 1px solid var(--ik-line); }
+.ik-check-mark { display: inline-block; min-width: 7rem; font-weight: 600; }
+.ik-check-ok .ik-check-mark { color: var(--ik-good); } .ik-check-bad .ik-check-mark { color: var(--ik-bad); } .ik-check-wait .ik-check-mark { color: var(--ik-wait); }
+.ik-headline { font-size: 1.1rem; }
+@media print { .ik-band a, .ik-button { display: none; } .ik-band { position: static; } }

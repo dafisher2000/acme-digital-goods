@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["es2024", "dom", "dom.iterable"],
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@demo-factory/interfaces/demonstration": ["../../../interfaces/src/demonstration.ts"],
+      "@demo-factory/interfaces/network": ["../../../interfaces/src/network.ts"],
+      "@demo-factory/interfaces/price": ["../../../interfaces/src/price.ts"],
+      "@demo-factory/interfaces/services": ["../../../interfaces/src/services.ts"]
+    }
+  },
+  "include": [".", "../../src", "../../../interfaces/src/integra-business.d.ts"]
+}

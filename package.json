@@ -1,0 +1,43 @@
+{
+  "name": "acme-digital-goods",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "vite build && wrangler deploy",
+    "typecheck": "tsc --noEmit -p tsconfig.worker.json",
+    "deploy:local": "vite build && wrangler deploy --secrets-file .dev.vars"
+  },
+  "dependencies": {
+    "@demo-factory/interfaces": "file:./integra/interfaces",
+    "@integraledger/lcp": "0.2.0",
+    "@modelcontextprotocol/server": "2.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "wouter": "3.11.1",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.54.7",
+    "@cloudflare/workers-types": "5.20260923.1",
+    "@integraledger/agentic-connectors": "0.2.0",
+    "@types/react": "19.2.0",
+    "@types/react-dom": "19.2.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.1",
+    "wrangler": "4.131.0"
+  },
+  "description": "An app made in the Integra demo factory.",
+  "cloudflare": {
+    "bindings": {
+      "SELLER_CREDENTIAL": {
+        "description": "The seller credential the Integra demo factory gave you (its Deploy to Cloudflare section). Required."
+      },
+      "RPC_URL": {
+        "description": "A Base Sepolia node's URL, for reading the chain. Unless you have a node, leave the default: the public endpoint https://sepolia.base.org."
+      }
+    }
+  }
+}

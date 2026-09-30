@@ -1,0 +1,51 @@
+{
+  "name": "North Palettes",
+  "by": "ACME Digital Goods, Leeds",
+  "version": "1.0",
+  "note": "Forty palettes sampled from northern English places. Contrast figures are WCAG relative-luminance ratios on the listed background.",
+  "palettes": [
+    {
+      "id": "saltaire-stone",
+      "place": "Saltaire, Bradford",
+      "colours": { "bg": "#e8e2d4", "text": "#33393f", "accent": "#b8402e" },
+      "contrast": { "text_on_bg": 8.9, "accent_on_bg": 4.8 },
+      "pairing": "Use with Gritstone Moss for interiors and heritage brands."
+    },
+    {
+      "id": "gritstone-moss",
+      "place": "Ilkley Moor",
+      "colours": { "bg": "#7d746a", "text": "#f4f1ea", "accent": "#a89d7e" },
+      "contrast": { "text_on_bg": 7.4, "accent_on_bg": 2.3 },
+      "pairing": "Accent is decorative only; keep body text in the light tone."
+    },
+    {
+      "id": "heather-line",
+      "place": "Haworth moor, August",
+      "colours": { "bg": "#6b5a86", "text": "#f5f2ea", "accent": "#c9b8e0" },
+      "contrast": { "text_on_bg": 6.8, "accent_on_bg": 4.6 },
+      "pairing": "Suits cultural and music work; try Peat Water for depth."
+    },
+    {
+      "id": "peat-water",
+      "place": "Black Moss Reservoir",
+      "colours": { "bg": "#3e4a45", "text": "#e6ebe7", "accent": "#8fb3a3" },
+      "contrast": { "text_on_bg": 8.1, "accent_on_bg": 5.2 },
+      "pairing": "A quiet dark mode; pair with Saltaire Stone for the light surface."
+    },
+    {
+      "id": "mill-window",
+      "place": "Dean Clough, Halifax",
+      "colours": { "bg": "#f4f1ea", "text": "#26292c", "accent": "#1f5e6b" },
+      "contrast": { "text_on_bg": 13.2, "accent_on_bg": 6.1 },
+      "pairing": "The all-purpose light palette; safe default for interface work."
+    },
+    {
+      "id": "weldbank-brick",
+      "place": "Chorley terraces",
+      "colours": { "bg": "#9e5a44", "text": "#f7ede6", "accent": "#2c3531" },
+      "contrast": { "text_on_bg": 5.9, "accent_on_bg": 3.0 },
+      "pairing": "Bold editorial backgrounds; lift body copy onto a lighter panel."
+    }
+  ],
+  "licence": "Use the palettes in any project. Do not republish the dataset as a competing product."
+}

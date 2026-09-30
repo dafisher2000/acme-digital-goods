@@ -1,0 +1,78 @@
+{
+  "name": "ACME Digital Goods",
+  "line": "Typefaces, pattern packs and studio tools from a two-person foundry in Leeds, delivered as files.",
+  "contact": "hello@acmedigital.example",
+  "offers": [
+    {
+      "id": "bracken-display",
+      "name": "Bracken Display, glyph set",
+      "about": "A display face for headlines and posters, delivered as an SVG specimen with the full working glyph set drawn as vector outlines, plus a single-studio desktop licence.",
+      "price": "48.00",
+      "payment": "now",
+      "delivers": { "kind": "file", "file": "bracken-specimen.svg" },
+      "terms": {
+        "licence": "Single-studio licence: installed on up to five machines within one studio. You may not resell, lend or redistribute the glyph outlines.",
+        "deliverables": "One SVG file with the specimen sheet and glyph outlines, delivered at purchase.",
+        "upgrades": "Minor revisions of the face are free within 12 months."
+      },
+      "limits": { "lowest": "36.00" }
+    },
+    {
+      "id": "moor-patterns",
+      "name": "Moor pattern pack, 12 tiles",
+      "about": "Twelve seamless vector pattern tiles drawn from the Yorkshire moors: heather, gritstone, peat water and sheep-worn paths. Delivered as one SVG sheet, each tile ready to lift into your own work.",
+      "price": "18.00",
+      "payment": "now",
+      "delivers": { "kind": "file", "file": "moor-patterns.svg" },
+      "terms": {
+        "licence": "You may use the tiles in client work and printed or digital products without limit. You may not resell or redistribute the tiles as patterns.",
+        "deliverables": "One SVG file with twelve seamless tiles, delivered at purchase.",
+        "refunds": "A download cannot be returned, so it is not refunded."
+      }
+    },
+    {
+      "id": "studio-palettes",
+      "name": "North Palettes dataset",
+      "about": "Forty colour palettes sampled from northern English places, as structured JSON with hex values, WCAG contrast notes and suggested pairings. Built for quick brand and interface work.",
+      "price": "9.00",
+      "payment": "now",
+      "delivers": { "kind": "file", "file": "studio-palettes.json" },
+      "terms": {
+        "licence": "Use the palettes in any commercial or personal project. The dataset itself may not be republished as a competing product.",
+        "deliverables": "One JSON file, delivered at purchase.",
+        "refunds": "A download cannot be returned, so it is not refunded."
+      }
+    },
+    {
+      "id": "extended-licence",
+      "name": "Extended studio licence",
+      "about": "Upgrades any ACME single-studio purchase to an extended licence: unlimited machines, use in products for sale, and sub-licensing for one client. Issued as a signed licence document naming your studio.",
+      "price": "120.00",
+      "payment": "now",
+      "delivers": {
+        "kind": "file",
+        "file": "extended-licence.txt",
+        "asks": ["studio", "email"]
+      },
+      "terms": {
+        "licence": "Extended licence: unlimited machines within your studio, use in products for sale, and one named client sub-licence. Not transferable to another studio.",
+        "deliverables": "A licence document naming the studio given at purchase, delivered at purchase.",
+        "scope": "Covers all ACME products bought by the named studio before and after the licence date."
+      },
+      "limits": { "lowest": "90.00" }
+    },
+    {
+      "id": "pitch-kit",
+      "name": "Pitch kit for small studios",
+      "about": "A plain-English guide written after ninety pitches we mostly lost: how to scope a project, price it, and write the one-page pitch that gets read. Includes a follow-up email template and a fee calculator sheet.",
+      "price": "14.00",
+      "payment": "now",
+      "delivers": { "kind": "file", "file": "pitch-kit.md" },
+      "terms": {
+        "licence": "For use within your own studio. You may share it internally; you may not resell or publish it.",
+        "deliverables": "One Markdown file, delivered at purchase.",
+        "refunds": "If the guide does not help, tell us within 14 days and we will refund it."
+      }
+    }
+  ]
+}
